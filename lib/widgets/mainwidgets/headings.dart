@@ -17,9 +17,7 @@ final String text;
         children: [
           
           SizedBox(width: 10,),
-          Text(
-            text,
-            style: TextStyle(fontSize: fontsize, color: color,fontWeight: FontWeight.w500),
+          Text(text,style: TextStyle(fontSize: fontsize, color: color,fontWeight: FontWeight.w500),
           ),
         ],
       ),

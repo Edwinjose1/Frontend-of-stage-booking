@@ -30,7 +30,7 @@ class Myapp extends StatelessWidget {
         scaffoldMessengerKey: Utils.messengerKey,
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
-              initialRoute: '/login', // Set the initial route
+              // initialRoute: '/login', // Set the initial route
       routes: {
         '/login': (context) => LoginPage(),
         '/home': (context) => HomeScreen(),

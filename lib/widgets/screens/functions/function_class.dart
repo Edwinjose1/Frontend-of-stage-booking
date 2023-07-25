@@ -2,23 +2,29 @@
  
  import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:user_side_app/home_screen.dart';
 
 void showAlertDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text('Test Alert'),
-        content: Text('This is a test alert.'),
-        actions: [
-          TextButton(
-            child: Text('OK'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
+     return AlertDialog(
+  title: Text("Congratulations", style: TextStyle(color: Colors.red)),
+  content: Text('Booking Confirmed!\nAdmin will confirm your order\nPlease wait for it!', style: TextStyle(color: Colors.green)),
+  actions: [
+    TextButton(
+      child: Text('OK'),
+      onPressed: () async {
+        Navigator.of(context).pop();
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+      },
+    ),
+  ],
+);
+
     },
   );
 }
@@ -58,13 +64,14 @@ void addToMyorder({
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Cannot Book'),
+          title: Text('Cannot Book',style: TextStyle(color: Colors.red),),
           content: Text('This product is already booked on the selected date.'),
           actions: [
             TextButton(
               child: Text('OK'),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); 
+
               },
             ),
           ],
@@ -116,8 +123,8 @@ void addToMyorder({
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Cannot Book'),
-          content: Text('This product is already booked on the selected date.'),
+          title: Text('Cannot Booked',style: TextStyle(color: Colors.red),),
+          content: Text('This product is already booked on the selected date.',),
           actions: [
             TextButton(
               child: Text('OK'),

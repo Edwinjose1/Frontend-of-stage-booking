@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../bottom_nav.dart';
-import '../mainwidgets/headings.dart';
 import '../core/colours.dart';
+import '../mainwidgets/headings.dart';
 
 
 class FuneralcatagoryScreen extends StatelessWidget {
@@ -39,7 +38,7 @@ class FuneralcatagoryScreen extends StatelessWidget {
         ),
       ),
       ),
-      bottomNavigationBar: BottomNav(),
+
     );
   }
 }

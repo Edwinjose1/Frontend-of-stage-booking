@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:user_side_app/widgets/Screens/add_cart_screen.dart';
 import 'package:user_side_app/widgets/Screens/payment_screen.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 
 class BuyAndCart extends StatefulWidget {
   final String productid;
@@ -77,7 +78,7 @@ class _BuyAndCartState extends State<BuyAndCart> {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
+                        primary: kapptheam,
                         onPrimary: Colors.white,
                         shadowColor: Colors.greenAccent,
                         elevation: 3,
@@ -104,7 +105,7 @@ class _BuyAndCartState extends State<BuyAndCart> {
                   Expanded(
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
+                        primary: kPink,
                         onPrimary: Colors.white,
                         shadowColor: Colors.blueAccent,
                         elevation: 3,

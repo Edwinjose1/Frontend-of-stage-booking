@@ -14,9 +14,7 @@ class Catagories extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
-      // height: size.width * 0.4,
-      // //  width: MediaQuery.of(context).size.width / 10,
-      // width: 100,
+    
       child: Container(
         margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
         height: 200,
@@ -53,7 +51,7 @@ class Catagories extends StatelessWidget {
               child: Catagorycard(
                   size: size,
                   networkimage:
-                      "https://thumbs.dreamstime.com/z/people-event-holiday-official-people-person-drink-alcohol-crockery-black-white-engagement-honeymoon-concept-cropped-close-up-112692801.jpg",
+                      "https://img.freepik.com/premium-photo/five-girls-wear-black-with-balloons-drinking-red-champagne-hen-party_627829-8655.jpg?size=626&ext=jpg&ga=GA1.2.1230767016.1683657715&semt=ais",
                   eventname: "Social Events"),
                   onTap: () {
                      Navigator.push(

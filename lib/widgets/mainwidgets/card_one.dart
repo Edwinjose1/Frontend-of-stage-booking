@@ -1,7 +1,6 @@
 
-
-
 import 'package:flutter/material.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 
 import '../Screens/stage_card_screen.dart';
 
@@ -43,7 +42,7 @@ final String img;
             children: [
               Text(text
                 ,
-                style: TextStyle(fontSize: 20, color: Colors.white,fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 20, color: kPink,fontWeight: FontWeight.w500),
               ),
               
             ],

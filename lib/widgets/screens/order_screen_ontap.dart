@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 import 'package:user_side_app/widgets/screens/stageof_card.dart';
 
 class OrderScreenontap extends StatefulWidget {
@@ -57,7 +58,7 @@ class _OrderScreenontapState extends State<OrderScreenontap> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Order Details'),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: kPink,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

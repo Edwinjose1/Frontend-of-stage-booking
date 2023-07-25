@@ -54,14 +54,16 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
-        backgroundColor: kBlue,
+        title: Text('Search'),
+        backgroundColor: kPink,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Color.fromARGB(119, 40, 15, 37),
+              color: kWhite,
             ),
             height: 55,
             width: 55,
@@ -123,13 +125,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Widget buildProduct(Product product) => InkWell(
         onTap: () {
-          // Handle product tap
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => CardonTapScreen(),
-          //   ),
-          // );
+          
         },
         child: Stagecard(
           id: product.id,

@@ -1,8 +1,9 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:user_side_app/widgets/mainwidgets/addtocart_cards.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 import 'package:user_side_app/widgets/favorite_screen.dart';
+import 'package:user_side_app/widgets/mainwidgets/addtocart_cards.dart';
 
 
 class CartScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: kPink,
         title: Text('Cart'),
       ),
       body: Padding(
@@ -68,6 +70,7 @@ class _CartScreenState extends State<CartScreen> {
                           ),
                         ),
                         Container(
+                          color:kPink,
                           padding: EdgeInsets.all(10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,11 +78,13 @@ class _CartScreenState extends State<CartScreen> {
                               Text(
                                 'Total: ${calculateTotal(cartproducts)}',
                                 style: TextStyle(
+                                  color: kWhite,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
                                 ),
                               ),
                               ElevatedButton(
+                                style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(kapptheam)),
                                 onPressed: () {
                                   // Handle buy button click
                                 },

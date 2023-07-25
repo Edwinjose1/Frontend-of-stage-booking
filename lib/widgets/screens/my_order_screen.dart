@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 
 import 'order_screen_ontap.dart';
 
@@ -16,7 +17,7 @@ class MyOrderScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Order'),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: kPink,
       ),
       body: MediaQuery.removePadding(
         removeTop: true,
@@ -71,6 +72,7 @@ class MyOrderScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: ListTile(
+                    
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => OrderScreenontap(
@@ -84,11 +86,11 @@ class MyOrderScreen extends StatelessWidget {
                         ),
                       ));
                     },
-                    tileColor: Color.fromARGB(255, 70, 106, 150),
+                    tileColor: kapptheam,
                     title: Text(
                       productid,
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color: kPink),
                     ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +114,7 @@ class MyOrderScreen extends StatelessWidget {
                           isConfirmed ? 'Confirmed' : 'Pending',
                           style: TextStyle(
                             fontSize: 16,
-                            color: isConfirmed ? Colors.green : Colors.yellow,
+                            color: isConfirmed ? kWhite : kPink,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

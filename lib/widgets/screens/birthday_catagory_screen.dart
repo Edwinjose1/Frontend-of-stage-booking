@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../bottom_nav.dart';
 import '../core/colours.dart';
 
 class BirthdaycatagoryScreen extends StatelessWidget {
@@ -39,7 +38,7 @@ class BirthdaycatagoryScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNav(),
     );
   }
 }

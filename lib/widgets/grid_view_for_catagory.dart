@@ -71,13 +71,7 @@ class StageGridviewCatagory
 
   Widget buildProduct(Product product) => InkWell(
         onTap: () {
-          // Handle product tap
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => CardonTapScreen(),
-          //   ),
-          // );
+        
         },
         child: Stagecard(
           id: product.id,

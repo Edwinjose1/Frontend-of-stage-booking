@@ -35,7 +35,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(
             Icons.search,
-            color: Color.fromARGB(255, 28, 52, 71),
+            color: kWhite,
           ),
           onPressed: () {
            Navigator.push(

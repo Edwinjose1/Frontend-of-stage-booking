@@ -17,12 +17,14 @@ class CardonTapScreen extends StatefulWidget {
     required this.rating,
     required this.category,
     required this.description,
+    required this.subcategory,
   }) : super(key: key);
 
   final String price;
 
   final List<String> imageUrls;
   final int rating;
+  final String subcategory;
   final String category;
   final String description;
   final String id;
@@ -52,13 +54,14 @@ class _CardonTapScreenState extends State<CardonTapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kBlue,
+        
+        backgroundColor: kPink,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Color.fromARGB(119, 40, 15, 37),
+              color: Colors.white
             ),
             height: 55,
             width: 55,
@@ -110,37 +113,11 @@ class _CardonTapScreenState extends State<CardonTapScreen> {
           SizedBox(height: 20),
           Row(
             children: [
-              Headings(fontsize: 20, color: kBlack, text: widget.price),
+              SizedBox(width: 10,),
+              Icon(Icons.currency_rupee_rounded,size: 25,color: Colors.black,),
+         Text(widget.price,style: TextStyle(fontSize: 25, color: kBlue,fontWeight: FontWeight.w500)),
               SizedBox(width: 120),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.green,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.green,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.green,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.grey,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.grey,
-                  ),
-                ],
-              ),
+            
             ],
           ),
           Row(
@@ -158,7 +135,7 @@ class _CardonTapScreenState extends State<CardonTapScreen> {
           Headings(
             fontsize: 20,
             color: kPink,
-            text: widget.category,
+            text: widget.subcategory,
           ),
           ParagraphText(
             fontsize: 15,

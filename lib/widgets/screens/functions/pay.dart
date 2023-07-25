@@ -71,40 +71,14 @@ class Pay {
         "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
   }
 
-  // void handlePaymentSuccessResponse(
-  //   PaymentSuccessResponse response,
-  // ) async {
-  //   log(response.toString());
-
-  //   await 
-  // addToMyorder(
-  //     userId:userId ,
-  //     context: context,
-  //                       totalamount: widget.price,
-  //                       paymethod: "Direct",
-  //                       productId: widget.productid,
-  //                       address: addressController.text,
-  //                       phoneNumber: phoneNumberController.text,
-  //                       date: selectedDate,
-  //                     );
-  //   Get.defaultDialog(
-  //     title: 'Your Order Successfull',
-  //     middleText: 'For more details,\n check Delivery Status',
-  //     onConfirm: () => Get.off(() => const Navigationpage(),
-  //         transition: Transition.circularReveal,
-  //         duration: const Duration(seconds: 1)),
-  //   );
-  // }
   void handlePaymentSuccessResponse(PaymentSuccessResponse response) {
   log(response.toString());
 
   BuildContext context = Navigator.of(navigatorKey.currentContext!).context;
-  // Replace NavigatorKey with the appropriate key where your Navigator is defined.
-  // For example, if you are using MaterialApp, it would be "NavigatorKey" in
-  // MaterialApp(navigatorKey: NavigatorKey, ...)
+
 
   addToMyorder(
-    context: context, // Pass the BuildContext here
+    context: context, 
     userId: userId,
     totalamount: price,
     paymethod: "Direct",

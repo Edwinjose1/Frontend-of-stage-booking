@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:user_side_app/home_screen.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 import 'package:user_side_app/widgets/mainwidgets/total_amount.dart';
 
 import 'functions/function_class.dart';
@@ -82,7 +82,7 @@ class _PaymentscreenState extends State<Paymentscreen> {
             controller: addressController,
             decoration: InputDecoration(
               hintText: 'Enter your address',
-              border: InputBorder.none, // Remove underline
+              // Remove underline
             ),
           ),
           actions: [
@@ -133,7 +133,6 @@ class _PaymentscreenState extends State<Paymentscreen> {
             ],
             decoration: InputDecoration(
               hintText: 'Enter your phone number',
-              border: InputBorder.none, // Remove underline
             ),
           ),
           actions: [
@@ -215,9 +214,10 @@ class _PaymentscreenState extends State<Paymentscreen> {
               child: Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
+                Navigator.of(context).pop();
+                Navigator.of(context).pop();
                 // Navigate to the home screen
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                
               },
             ),
           ],
@@ -238,13 +238,14 @@ class _PaymentscreenState extends State<Paymentscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 180, 173, 104),
+      backgroundColor: kWhite,
       appBar: AppBar(
+
         title: Text(
           "Payment",
-          style: TextStyle(color: Color.fromARGB(239, 6, 22, 10)),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color.fromARGB(255, 163, 80, 80),
+        backgroundColor: kPink,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
@@ -253,11 +254,11 @@ class _PaymentscreenState extends State<Paymentscreen> {
               color: Color.fromARGB(119, 40, 15, 37),
             ),
             height: 55,
-            width: 55,
+            width: 30,
             child: IconButton(
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.black,
+                color: Colors.white,
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -271,86 +272,28 @@ class _PaymentscreenState extends State<Paymentscreen> {
           SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 5),
+                SizedBox(height: 15),
                 Text(
                   'Delivery Address',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: GestureDetector(
-                        onTap: () {
-                          showAddressPopup(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 165,
-                            width: 300,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: Colors.grey[200],
-                            ),
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: TextField(
-                                  readOnly: true,
-                                  controller: addressController,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: addressController.text.isNotEmpty
-                                        ? Colors.black
-                                        : Colors.grey,
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: 'Tap to enter address',
-                                    hintStyle: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey,
-                                    ),
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () {
-                        showAddressPopup(context);
-                      },
-                    ),
-                  ],
-                ),
-                if (isAddressError)
-                  Text(
-                    'Please enter a valid address',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
+                GestureDetector(
+                  onTap: () {
+                    showAddressPopup(context);
+                  },
                   child: Row(
                     children: [
                       Expanded(
                         child: GestureDetector(
-                          onTap: () {
-                            showPhoneNumberPopup(context);
-                          },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                              height: 50,
+                              height: 100,
+                              width: 300,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.grey[200],
@@ -358,26 +301,41 @@ class _PaymentscreenState extends State<Paymentscreen> {
                               child: Center(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: TextField(
-                                    readOnly: true,
-                                    controller: phoneNumberController,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color:
-                                          phoneNumberController.text.isNotEmpty
-                                              ? Colors.black
-                                              : Colors.grey,
-                                    ),
-                                    decoration: InputDecoration(
-                                      hintText: 'Tap to enter phone number',
-                                      hintStyle: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: TextField(
+                                          textAlign: TextAlign.center,
+                                          readOnly: true,
+                                          controller: addressController,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: addressController
+                                                    .text.isNotEmpty
+                                                ? Colors.black
+                                                : Colors.grey,
+                                          ),
+                                          decoration: InputDecoration(
+                                            hintText: 'Tap to enter address',
+                                            hintStyle: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey,
+                                            ),
+                                            border: InputBorder.none,
+                                          ),
+                                        ),
                                       ),
-                                      border: InputBorder.none,
-                                    ),
+                                      IconButton(
+                                        onPressed: () {
+                                          showAddressPopup(context);
+                                          // Handle the edit button press here
+                                          // For example, you can call a function to enable editing mode
+                                        },
+                                        icon: Icon(Icons.edit),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -385,15 +343,84 @@ class _PaymentscreenState extends State<Paymentscreen> {
                           ),
                         ),
                       ),
-                      IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () {
-                          showPhoneNumberPopup(context);
-                        },
+                    ],
+                  ),
+                ),
+
+                
+                Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                if (isAddressError)
+                  Text(
+                    textAlign: TextAlign.center,
+                    'Please enter a valid address',
+                    style: TextStyle(color: kPink),
+                  ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Colors.grey[200],
+                            ),
+                            child: Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        textAlign: TextAlign.center,
+                                        readOnly: true,
+                                        controller: phoneNumberController,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: phoneNumberController
+                                                  .text.isNotEmpty
+                                              ? Colors.black
+                                              : Colors.grey,
+                                        ),
+                                        decoration: InputDecoration(
+                                          hintText: 'Tap to enter phone number',
+                                          hintStyle: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey,
+                                          ),
+                                          border: InputBorder.none,
+                                        ),
+                                      ),
+                                    ),
+                                    IconButton(
+                                      icon: Icon(Icons.edit,color: Colors.black,),
+                                      onPressed: () {
+                                        showPhoneNumberPopup(context);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
+
                 if (isPhoneNumberError)
                   Text(
                     'Please enter a valid phone number',
@@ -403,28 +430,37 @@ class _PaymentscreenState extends State<Paymentscreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(kPink)),
                       onPressed: () {
                         _selectDate(context);
                       },
-                      child: Text(
-                        selectedDate != null
-                            ? 'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}'
-                            : 'Select Date',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            selectedDate != null
+                                ? 'Selected Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}'
+                                : 'Select Date',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: kWhite,
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.edit,color: kWhite),
+                            onPressed: () {
+                              _selectDate(context);
+                            },
+                          ),
+                        ],
                       ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: () {
-                        _selectDate(context);
-                      },
                     ),
                   ],
                 ),
+
+          
+                SizedBox(height: 10,),
                 Text(
                   'Payment details',
                   style: TextStyle(
@@ -450,17 +486,15 @@ class _PaymentscreenState extends State<Paymentscreen> {
                         phoneNumberController.text.isNotEmpty &&
                         selectedDate != null) {
                       addToMyorder(
-                        userId: userId,
-                        context:context,
-                        totalamount: widget.price,
-                        paymethod: "Direct",
-                        productId: widget.productid,
-                        address: addressController.text,
-                        phoneNumber: phoneNumberController.text,
-                        date: selectedDate,
-                        isConfirmed: false
-                        
-                      );
+                          userId: userId,
+                          context: context,
+                          totalamount: widget.price,
+                          paymethod: "Direct",
+                          productId: widget.productid,
+                          address: addressController.text,
+                          phoneNumber: phoneNumberController.text,
+                          date: selectedDate,
+                          isConfirmed: false);
                     } else {
                       setState(() {
                         isAddressError = addressController.text.isEmpty;
@@ -492,7 +526,7 @@ class _PaymentscreenState extends State<Paymentscreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.grey[200],
+                      color: kapptheam,
                     ),
                     height: 50,
                     width: 250,
@@ -518,13 +552,21 @@ class _PaymentscreenState extends State<Paymentscreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 15),
                 GestureDetector(
                   onTap: () {
                     if (addressController.text.isNotEmpty &&
                         phoneNumberController.text.isNotEmpty) {
                       // Proceed to payment method
-                        Pay(isConfirmed: false,address:addressController.text,dateselected:selectedDate ,phoneNumber: phoneNumberController.text,price:widget.price ,productid: widget.productid,userId:userId, ).paymentmodel();
+                      Pay(
+                        isConfirmed: false,
+                        address: addressController.text,
+                        dateselected: selectedDate,
+                        phoneNumber: phoneNumberController.text,
+                        price: widget.price,
+                        productid: widget.productid,
+                        userId: userId,
+                      ).paymentmodel();
                     } else {
                       setState(() {
                         isAddressError = addressController.text.isEmpty;
@@ -535,7 +577,7 @@ class _PaymentscreenState extends State<Paymentscreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.grey[200],
+                      color: kapptheam,
                     ),
                     height: 50,
                     width: 200,

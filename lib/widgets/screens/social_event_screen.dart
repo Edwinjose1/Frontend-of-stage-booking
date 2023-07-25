@@ -1,9 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../bottom_nav.dart';
-import '../mainwidgets/headings.dart';
 import '../core/colours.dart';
+import '../mainwidgets/headings.dart';
 
 
 class SocialEventScreen extends StatelessWidget {
@@ -40,7 +39,7 @@ class SocialEventScreen extends StatelessWidget {
         ),
       ),
       ),
-      bottomNavigationBar: BottomNav(),
+      // bottomNavigationBar: BottomNav(),
     );
   }
 }

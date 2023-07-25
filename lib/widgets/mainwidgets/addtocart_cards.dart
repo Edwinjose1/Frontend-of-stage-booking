@@ -49,14 +49,7 @@ class __CardofStageState extends State<CardofStage> {
     favoritesCollection.doc(widget.id).set({});
   }
 
-  // void removeFromCart() {
-  //   final favoritesCollection = FirebaseFirestore.instance
-  //       .collection('cart')
-  //       .doc(userId)
-  //       .collection('products');
-
-  //   favoritesCollection.doc(widget.id).delete();
-  // }
+ 
 
 void removeFromCart() {
   final cartCollection = FirebaseFirestore.instance
@@ -64,7 +57,7 @@ void removeFromCart() {
       .doc(userId)
       .collection('products');
 
-  // final removedItem = Map<String, dynamic>.from(widget.toJson()); // Create a copy of the item data before deleting
+ 
 
   cartCollection.doc(widget.id).delete();
 
@@ -101,6 +94,7 @@ void removeFromCart() {
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => CardonTapScreen(
+                subcategory: widget.subcategory,
                 id: widget.id,
                 category: widget.category,
                 description: widget.description,
@@ -115,7 +109,7 @@ void removeFromCart() {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.lightGreen,
+                color: Color.fromARGB(255, 132, 91, 110) ,
               ),
               width: 250,
               height: 250,
@@ -177,27 +171,7 @@ void removeFromCart() {
                             ),
                           ],
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.all(4),
-                          child: Row(
-                            children: [
-                              Text(
-                                "${widget.rating}",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(width: 2),
-                              Icon(
-                                Icons.star,
-                                size: 14,
-                                color: Colors.white,
-                              ),
-                            ],
-                          ),
-                        ),
+                      
                       ),
                       SizedBox(width: 10),
                     ],

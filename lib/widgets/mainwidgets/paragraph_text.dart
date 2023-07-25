@@ -35,33 +35,4 @@ final String text;
           ),
         ],
       ),
-    );
-
-
-    // return Padding(
-    //   padding: const EdgeInsets.all(15),
-    //   child: Row(
-    //     children: [
-    //       Container(height: 27,width: 7,color: kPink,),
-    //       SizedBox(width: 10,),
-    //       Column(
-    //         children: [
-    //           Text(
-                
-    //             text,
-    //             textAlign: TextAlign.justify,
-    //             style: GoogleFonts.lora(
-    //               fontSize: fontsize,
-    //               color: color
-
-
-
-    //             ),
-    //           ),
-    //         ],
-    //       ),
-    //     ],
-    //   ),
-    // );
-  }
-}
+    );}}

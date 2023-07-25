@@ -32,7 +32,7 @@ class CatagoryScreeen
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:kBlue ,
+      backgroundColor:kWhite ,
       body:Center(
         child: Container(
           child: SafeArea(
@@ -70,7 +70,7 @@ class CatagoryScreeen
                   children: [
                     Headings(
                         fontsize: 30,
-                        color: Colors.white,
+                        color: kPink,
                         text: text),
                   ],
                 ),
@@ -80,10 +80,7 @@ class CatagoryScreeen
                     crossAxisCount: 2,
                     crossAxisSpacing: 0, // Adjust the cross-axis spacing here
                     mainAxisSpacing: 15, 
-                    // Adjust the main-axis spacing here
-                    // children: List(4, (index) {
-                    //   return Card1();
-                    // }),
+                   
                     children: [
                       Card1(text: name1,img: img1,),
                       Card1(text: name2,img:img2),

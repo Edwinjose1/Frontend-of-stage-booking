@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:user_side_app/widgets/core/colours.dart';
 import 'package:user_side_app/widgets/screens/stageof_card.dart';
 
 
@@ -16,8 +17,32 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
+         leading: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              color: Colors.white
+            ),
+            height: 55,
+            width: 55,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+        ),
+        
+        backgroundColor: kPink,
         title: Text('Favorites'),
+      
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 10),
@@ -131,36 +156,3 @@ class Product {
   }
 }
 
-// class Stagecard extends StatelessWidget {
-//   final String id;
-//   final String subcategory;
-//   final int rating;
-//   final String price;
-//   final List<String> imageUrls;
-//   final String category;
-//   final String description;
-
-//   Stagecard({
-//     required this.id,
-//     required this.subcategory,
-//     required this.rating,
-//     required this.price,
-//     required this.imageUrls,
-//     required this.category,
-//     required this.description,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // Build the card widget using the provided data
-//     return Card(
-//       child: Column(
-//         children: [
-//           // Add your card content here
-//           Text('Product: $subcategory'),
-//           Text('Price: $price'),
-//         ],
-//       ),
-//     );
-//   }
-// }
